@@ -37,11 +37,19 @@ function ataqueAleatorioEnemigo() {
 }
 
 function crearMensaje(resultado) {
-    let parrafo = document.createElement('p')
-    let seccionMensajes = document.getElementById('seccion-mensajes')
+    let seccionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+    
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
-    seccionMensajes.appendChild(parrafo)
+    seccionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML= ataqueEnemigo
+    
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 function crearMensajeFinal(resultado) {
@@ -53,11 +61,8 @@ function crearMensajeFinal(resultado) {
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.disabled = true
 
-    let parrafo = document.createElement('p')
-    let seccionMensajes = document.getElementById('seccion-mensajes')
-
-    parrafo.innerHTML = resultado
-    seccionMensajes.appendChild(parrafo)
+    let seccionMensajes = document.getElementById('resultado')
+    seccionMensajes.innerHTML = resultado
 
     let secionReiniciar = document.getElementById('seccion-reiniciar')
     secionReiniciar.style.display = 'block'
@@ -157,7 +162,7 @@ function seleccionarMascotaJugador() {
         seccionSeleccionarMascota.style.display = 'none'
     
         let seccionSeleccionarAtaque = document.getElementById('seccion-seleccionar-ataque')
-        seccionSeleccionarAtaque.style.display = 'block'
+        seccionSeleccionarAtaque.style.display = 'flex'
 
         let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()

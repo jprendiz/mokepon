@@ -1,0 +1,131 @@
+/* 
+
+Diseños: co.pinterest.com 
+Colores: colorhunt.co 
+Fuentes: fonts.google.com 
+Guía grid: css-tricks.com
+Práctica grid: cssgridgarden.com/#es
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@300&display=swap');
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    background-color: #041562;
+}
+
+#seccion-seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    font-size: 32px;
+}
+
+.subtitulo {
+    color: white;
+    font-size: 20px;
+}
+
+
+.tarjetas, .tarjetas-ataques {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    width: 180px;
+    height: 100px;
+    background: #11468F;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.tarjeta-de-mokepon img {
+    width: 110px;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    background: #5D8BF4;
+}
+#boton-seleccionar-mascota {
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    margin: 30px 0px 0px 0px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+#seccion-seleccionar-ataque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque {
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 130px;
+    height: 50px;
+    margin: 10px;
+}
+
+#seccion-mensajes{
+    width: 300px;
+    background: #EEEEEE;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#boton-reiniciar {
+    border: none;
+    color: #11468F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.ataques {
+    color: white;
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+.ataques-jugador, .ataques-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width:360px) {
+    .tarjetas, .tarjetas-ataques {
+        flex-direction: column;
+    }
+
+    
+}
